@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Allonsy Survey</title>
+  </head>
+  <body class="bg-light">
+    <!-- *********** -->
+    <!-- HEADER -->
+    <!-- *********** -->
+    <div class="jumbotron jumbotron-fluid text-center bg-dark text-white">
+      <div class="container">
+        <h1 class="display-4">2030 Sustainable Development Survey</h1>
+        <p class="lead">
+          The Sustainable Development Goals are the blueprint pioneered by the
+          United Nations to achieve a better and more sustainable future for
+          all. They address the global challenges we face, including those
+          related to poverty, inequality, climate, environmental degradation,
+          prosperity, and peace and justice.
+        </p>
+        <hr class="bg-light" />
+        <p>Click below to learn more about these goals...</p>
+        <a
+          href="https://www.un.org/sustainabledevelopment/development-agenda/"
+          class="btn btn-outline-primary"
+          target="_blank"
+          >Learn More</a
+        >
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 ">
+          <!-- *********** -->
+          <!-- NAVIGATION -->
+          <!-- *********** -->
+          <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a
+                class="nav-item nav-link active"
+                id="basic-info-tab"
+                data-toggle="tab"
+                href="#basic-info"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+                >Step 1 <br />
+                <small class="d-none d-md-inline">Basic Info</small></a
+              >
+              <a
+                class="nav-item nav-link"
+                id="goal-ranking-tab"
+                data-toggle="tab"
+                href="#goal-ranking"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+                >Step 2 <br />
+                <small class="d-none d-md-inline">Goal Ranking</small></a
+              >
+            </div>
+          </nav>
+
+          <!-- *********** -->
+          <!-- CONTENT -->
+          <!-- *********** -->
+          <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+            <!-- *********** -->
+            <!-- BASIC INFO -->
+            <!-- *********** -->
+            <div
+              class="tab-pane fade show active"
+              id="basic-info"
+              role="tabpanel"
+              aria-labelledby="basic-info-tab"
+            >
+              <form id="basic_info" onsubmit="submitBI()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">First Name:</label>
+                      <input type="text" id="firstName" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">Last Name:</label>
+                      <input type="text" id="lastName" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label for="age">Age-Group:</label>
+                        <select id="age" class="form-control">
+                          <option value="" selected>- Select Age Group</option>
+                          <option value="Youth">15-24</option>
+                          <option value="Adults">25-40</option>
+                          <option value="Senior">40-65</option>
+                          <option value="Old">65+</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="gender">Gender:</label>
+                      <select id="gender" class="form-control">
+                        <option value="" selected>- Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="country">Country:</label>
+                      <select id="country" class="form-control">
+                        <option value="" selected>- Select Country</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">U.S.A</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline-secondary d-block ml-auto"
+                  id="submit"
+                  type="submit"
+                >
+                  Go To Step 2
+                </button>
+              </form>
+            </div>
+
+            <!-- *********** -->
+            <!-- GOAL RANKING -->
+            <!-- *********** -->
+            <div
+              class="tab-pane fade"
+              id="goal-ranking"
+              role="tabpanel"
+              aria-labelledby="goal-ranking-tab"
+            >
+              <h3 class="diplay-4 mb-4">
+                Question: Which of the following developmental goals would you
+                like to see your country focus on? (Select 5)
+              </h3>
+              <form id="goal_ranking" onsubmit="submitGR()">
+                <div class="row mb-4">
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/1.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="1"
+                            />
+                            <h4 class="card-title">No Poverty</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/poverty/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/2.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="2"
+                            />
+                            <h4 class="card-title">Zero Hunger</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/hunger/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/3.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="3"
+                            />
+                            <h4 class="card-title">Good Health & Well Being</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/health/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/4.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="4"
+                            />
+                            <h4 class="card-title">Quality Education</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/education/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/5.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="5"
+                            />
+                            <h4 class="card-title">Gender Equality</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/gender-equality/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/6.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="6"
+                            />
+                            <h4 class="card-title">Clean Water & Sanitation</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/water-and-sanitation/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/7.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="7"
+                            />
+                            <h4 class="card-title">
+                              Affordable & Clean Energy
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/energy/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/8.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="8"
+                            />
+                            <h4 class="card-title">
+                              Decent Work & Economic Growth
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/economic-growth/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/9.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="9"
+                            />
+                            <h4 class="card-title">
+                              Industry Innovation & Infrastructure
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/economic-growth/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/10.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="10"
+                            />
+                            <h4 class="card-title">Reduced Inequalities</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/inequality/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/11.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="11"
+                            />
+                            <h4 class="card-title">
+                              Sustainable Cities & Communities
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/cities/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/12.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="12"
+                            />
+                            <h4 class="card-title">
+                              Responsible Consumption & Production
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/13.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="13"
+                            />
+                            <h4 class="card-title">Climate Action</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/climate-change-2/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/14.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="14"
+                            />
+                            <h4 class="card-title">Life Below Water</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/oceans/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/15.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="15"
+                            />
+                            <h4 class="card-title">Life On Land</h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/biodiversity/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/16.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="16"
+                            />
+                            <h4 class="card-title">
+                              Peace, Justice & Strong Institutions
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/peace-justice/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-3">
+                    <div class="card">
+                      <img
+                        src="./assets/img/17.png"
+                        alt=""
+                        class="card-img-top img-fluid"
+                      />
+                      <div class="card-body">
+                        <div class="form-check">
+                          <label class="form-check-label mr-2">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              value="17"
+                            />
+                            <h4 class="card-title">
+                              Partnership For The Goals
+                            </h4>
+                          </label>
+                        </div>
+                        <a
+                          href="https://www.un.org/sustainabledevelopment/globalpartnerships/"
+                          class="btn btn-outline-primary btn-sm"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline-secondary d-block ml-auto"
+                  id="submit"
+                  type="submit"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                  value="Refresh Page" onClick="window.location.reload()"
+                >
+                  Submit
+                </button>
+              </form>
+              <div id="myModal" class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">
+                        Thank you for completing the survey
+                      </h5>
+                    </div>
+                    <div class="modal-body">
+                      Stay tuned for an update from by following
+                      us on
+                      <div class="mt-3">
+                        <a
+                          href="https://www.instagram.com/allonsyofficiel/?hl=en"
+                          target="_blank"
+                        >
+                          <i class="fab fa-instagram fa-2x"></i> <i>@allonsyofficiel</i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script src="./assets/js/survey.js"></script>
+  </body>
+</html>
